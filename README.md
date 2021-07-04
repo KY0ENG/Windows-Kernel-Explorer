@@ -1,11 +1,11 @@
 # Introduction
-Windows Kernel Explorer (you can simply call it as "WKE") is a free but powerful kernel research tool. It supports from Windows XP to Windows 10 (32-bit and 64-bit). Compared to WIN64AST and PCHunter, WKE can run on the latest Windows 10 without updating binary files.
+Windows Kernel Explorer (you can simply call it as "WKE") is a free but powerful kernel research tool. It supports from Windows XP to Windows 10 (32-bit and 64-bit). Compared with WIN64AST and PCHunter, WKE can run on the latest Windows 10 without updating binary files.
 
-### How WKE works on the latest Windows 10
+### How does WKE work on the latest Windows 10
 WKE will automatically download required symbol files if the current system is not supported natively, 90% of the features will work after this step. For some needed data that doesn't exist in symbol files, WKE will try to retrieve them from the DAT file (when new Windows 10 releases, I will upload a new DAT file to GitHub). If WKE cannot access the internet, 50% of the features will still work. Currently, native support is available from Windows XP to Windows 10 RS3; Windows 10 from RS4 to the lastest version are fully supported by parsing symbol files and DAT file.
 
 ### How to customize WKE
-You can customize WKE by editing the configuration file. Currently, you can specify the device name and symbolic link name of driver, and altitude of filter. You can also enable kernel-mode and user-mode characteristics randomization to avoid being detected by malware. If you rename the EXE file of WKE, then you need to rename SYS/DAT/INI files together with the same name.
+You can customize WKE by editing the configuration file. Currently, you can specify the device name and symbolic link name of driver, and altitude of filter. You can also enable kernel-mode and user-mode characteristics randomization to avoid being detected by malware. If you rename the EXE file of WKE, you must synchronously rename SYS/DAT/INI files with the same name as the EXE file.
 
 ### About digital signature and negative comment from Anti-Virus software
 Because I don't have a digital certificate, I have to use the leaked digital certificate from HT SRL to sign drivers of WKE. Signing files with the HT SRL digital certificate has a side effect: almost all Anti-Virus software infer files with HT SRL digital signature are malware, because many hackers use it to sign malwares since 2015. Only idiots implant malicious code into a tool for experienced programmers and reverse engineers, because most users only use WKE in test environments, this kind of behavior is meaningless.
@@ -44,7 +44,7 @@ In order to optimize the page load speed in low quality network environments, I 
 1. Team of WIN64AST: I referenced the UI design and many features of this software.
 2. Team of PCHunter: I referenced some features of this software.
 3. Team of ProcessHacker: I studied the source code of this software, but I didn't use it in my project.
-4. Donald John Trump: Thank for his wonderful performances from 2017 to 2020. When I am troubled with debugging, his news always makes me laugh. Ich hoffe sehr, dass er noch vier Jahre Präsident sein kann.
+4. Donald John Trump: Ich hoffe sehr, dass er noch vier Jahre Präsident sein kann.
 
 # Contact
 ### E-MAIL: AxtMueller#gmx.de (Replace # with @)
@@ -53,15 +53,18 @@ In order to optimize the page load speed in low quality network environments, I 
 3. In order to disclose as little personal information as possible (IP address, online time, etc.), I do not use instant messaging. Just write what you want in the E-MAIL.
 4. In order to reduce the impact of the Internet on real life, I also do not use Facebook, Twitter, etc. Please don't ask me for such information via E-MAIL.
 ### Paid services:
-1. Binary customization: Modify obvious characteristics of WKE and remove all of my personal information in WKE.
-2. Implant link: Implant link in WKE on "About" page, all users will see it when main dialog appears.
+1. Binary customization: Modify obvious characteristics and remove copyright information, this will prevent some softwares from detecting WKE based on the program characteristics. The customized version of WKE can be run on 64-bit Windows with HVCI enabled. 
+2. Implant link: Implant link on "About" page, all users will see it when main dialog appears.
 3. Specific feature separation: Copy source code of specific feature to a separate project.
-4. Driver static library: It contains most of main features of WKE. [WBD also uses this static library.](https://github.com/AxtMueller/Windows-Batch-Deployment)
-5. Driver source code: Entire driver source code of WKE.
+4. Driver static library: It contains most of main features. [WBD is using this static library.](https://github.com/AxtMueller/Windows-Batch-Deployment)
+5. Driver source code: Entire driver source code.
 6. Software customization: Write the user-mode program or kernel-mode driver according to your needs. This service is only available to customers who have purchased any of the above services.
 
 # [Revision History](/binaries/README.md#all-revision-history)
-### Current Version: 20201111
-Bug fix: Enhanced stability.
+### Current Version: 20210530
+Bug fix: Enhanced stability.  
+Bug fix: UI fine-tuning.  
+New feature: Prohibit process from running again after termination.  
+New feature: Get the window information at the cursor.
 ### Revoked Versions: 00000000
 These versions have serious security issues and should not be used anymore.
